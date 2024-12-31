@@ -13,4 +13,4 @@ try {
   fs.writeFileSync("RP/manifest.json", JSON.stringify(rp, null, 2))
   fs.writeFileSync("BP/manifest.json", JSON.stringify(bp, null, 2))
 
-} catch(e) { console.error("Link Manifest Failed!" + e); }
+} catch(e) { console.error("Link Manifest Failed! " + e); }
