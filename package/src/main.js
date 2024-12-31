@@ -94,7 +94,7 @@ for (const packageMode in settings.package) {
                 for (const packType of ["RP", "BP"]) {
                     if (settingConfig[packType] ?? true) {
                         // if both pack types (RP & BP) are selected, add _RP | _BP to the pack name.
-                        const filePath = `${packageLocation}/${packName}_${packType}.mcpack`
+                        const filePath = `${packageLocation}/${packName}_${packType.toLowerCase()}.mcpack`
 
                         const archive = new AdmZip()
 
