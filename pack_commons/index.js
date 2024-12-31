@@ -13,6 +13,7 @@ glob("data/pack_commons/**/!(commons.json)", null, function (err, files) {
 })
 
 for (file of config.common_files) {
-    fs.cpSync(file, `BP/${file}`, {recursive: true})
-    fs.cpSync(file, `RP/${file}`, {recursive: true})
+    const filepath = file.split("/").pop()
+    fs.copyFileSync(file, `BP/${filepath}`)
+    fs.copyFileSync(file, `RP/${filepath}`)
 }
