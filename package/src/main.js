@@ -23,8 +23,8 @@ for (const packageMode in settings.package) {
 
     const skinPackLocation = projectConfig["packs"].skinPack
 
-    const manifestRP = JSONCFindAndParse("RP/manifest.json")
-    const manifestBP = JSONCFindAndParse("BP/manifest.json")
+    const manifestRP = RP ? JSONCFindAndParse("RP/manifest.json") : {}
+    const manifestBP = BP ? JSONCFindAndParse("BP/manifest.json") : {}
 
     switch (packageMode) {
         case "mctemplate":
