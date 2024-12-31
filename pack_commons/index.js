@@ -7,8 +7,8 @@ const config = fs.existsSync(`data/pack_commons/commons.json`) ? JSON.parse(fs.r
 glob("data/pack_commons/**/!(commons.json)", null, function (err, files) {
     for (const file of files) {
         const filepath = path.relative('data/pack_commons/',file);
-        fs.cpSync(filepath, `BP/${filepath}`, {recursive: true})
-        fs.cpSync(filepath, `RP/${filepath}`, {recursive: true})
+        fs.cpSync(file, `BP/${filepath}`, {recursive: true})
+        fs.cpSync(file, `RP/${filepath}`, {recursive: true})
     }
 })
 
