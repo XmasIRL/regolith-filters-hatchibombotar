@@ -110,8 +110,8 @@ for (const packageMode in settings.package) {
                 const filePath = `${packageLocation}/${packName}.mcaddon`
 
                 const archive = new AdmZip()
-                if (RP) archive.addLocalFolder('RP/', `${packName}_RP`)
-                if (BP) archive.addLocalFolder('BP/', `${packName}_BP`)
+                if (RP) archive.addLocalFolder('RP/', `${packName}_rp`)
+                if (BP) archive.addLocalFolder('BP/', `${packName}_bp`)
 
                 archive.writeZip(filePath)
             }
