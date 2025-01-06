@@ -9,6 +9,8 @@ const settings = require("./settings")
 const projectConfig = JSONCFindAndParse(ROOT_DIR + "/config.json")
 
 const packageLocation = ROOT_DIR + (settings["package_location"] ?? "")
+if (!fs.existsSync(packageLocation)) { fs.mkdirSync(packageLocation, { recursive: true }) }
+
 const packName = settings["file_name"] ?? toSnakeCase(projectConfig.name)
 
 for (const packageMode in settings.package) {
